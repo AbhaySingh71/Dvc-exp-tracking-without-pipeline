@@ -15,8 +15,8 @@ y = df['Placed']
 
 X_train, X_test ,y_train, y_test = train_test_split(X, y, random_state=42, test_size=0.2)
 
-n_estimators = 100
-max_depth = 10
+n_estimators = 300
+max_depth = 100
 
 rf = RandomForestClassifier(n_estimators=n_estimators , max_depth=max_depth)
 
@@ -31,8 +31,8 @@ with Live(save_dvc_exp=True) as live:
     live.log_metric('Recall', recall_score(y_test,y_pred))
     live.log_metric('F1 score', f1_score(y_test,y_pred))
 
-    live.log_params('n_estimators' , n_estimators)
-    live.log_params('max_depth' , max_depth)
+    live.log_param('n_estimators' , n_estimators)
+    live.log_param('max_depth' , max_depth)
 
-    
+
 
