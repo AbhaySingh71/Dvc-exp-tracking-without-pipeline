@@ -1,0 +1,43 @@
+for dvc experiment tracking without pipeline
+
+- install dvclive
+- modify code
+- git init
+- dvc init
+- dvc add
+- git add -> git commit
+- run code
+- dvc exp show [dvclive folder)
+- change params and run another exp
+- dvc exp show
+- change params and run another exp
+- dvc exp diff
+- .dvc folder -> temp -> exp maintains history
+- dvc extension installation
+- dvc extension exploration
+- dvc plots using extensions
+- dvc exp remove
+- dvc exp apply <exp-name>
+- commit fav experiment
+
+for dvc experiment tracking with pipeline
+- create folder
+- add codes -> params.yaml -> dvc.yaml
+- git init
+- dvc int
+- git add -> git commit
+- dvc dag
+- dvc repro
+- dvc exp run
+- change params -> run another experiment
+- dvc exp show
+- dvc exp diff
+- dvc exp queue
+- dvc exp apply
+- commit best exp
+
+queue many hyperparamter like gridsearchcv in dvc
+:- dvc exp run --queue -S model_training.n_estimators=100,300,500 -S model_training.max_depth=100,300,500
+now run all 
+:- dvc exp run --run-all
+
